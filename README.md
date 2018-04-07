@@ -1,6 +1,6 @@
 # reps-count
 
-> RepsCounter
+> Workout reps counter web application
 
 ## Build Setup
 

@@ -33,8 +33,18 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
+    },
+    postcss: {
+      plugins: {
+        'postcss-custom-properties': false
+      }
     }
   },
+
+  css: [
+    'bulma',
+    '@/assets/styles.scss'
+  ],
 
   modules: [
     '@nuxtjs/pwa',
