@@ -1,6 +1,6 @@
 <template>
-  <h1 class="title">
-    {{ this.minutes }} : {{ this.seconds }}
+  <h1 class="title is-1">
+    {{ this.minutes | numeral('00') }} : {{ this.seconds | numeral('00') }}
   </h1>
 </template>
 
@@ -16,6 +16,10 @@ export default {
     start: {
       type: Boolean,
       default: false
+    },
+    resetted: {
+      type: Boolean,
+      default: true
     }
   },
 
@@ -48,6 +52,12 @@ export default {
         }, 1000)
       } else {
         clearInterval(this.timer)
+      }
+    },
+    resetted (data) {
+      if (data) {
+        this.minutes = this.time.minutes
+        this.seconds = this.time.seconds
       }
     }
   },

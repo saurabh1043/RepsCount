@@ -48,5 +48,9 @@ module.exports = {
 
   modules: [
     '@nuxtjs/pwa',
+  ],
+
+  plugins: [
+    '@/plugins/filters.js'
   ]
 }
