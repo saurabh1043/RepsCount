@@ -16,7 +16,7 @@ module.exports = {
   /*
   ** Customize the progress bar color
   */
-  loading: { color: '#3B8070' },
+  loading: { color: '#1e74ff' },
   /*
   ** Build configuration
   */
@@ -57,9 +57,9 @@ module.exports = {
 
   manifest: {
     "name": 'RepsCount',
-    "background_color": "#b5e3ff",
+    "background_color": "#1e74ff",
     "display": "standalone",
-    "theme_color": "#b5e3ff",
+    "theme_color": "#1e74ff",
     "start_url": "/"
   }
 }

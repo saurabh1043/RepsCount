@@ -27,6 +27,9 @@ const createStore = () => {
       },
       continueCount (state, payload) {
         state.continueCount = payload
+      },
+      addRep (state, payload) {
+        state.rep.push({ state: null, minutes: null, seconds: null })
       }
     }
   })
