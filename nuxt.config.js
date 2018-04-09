@@ -3,7 +3,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'reps-count',
+    title: 'RepsCount',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -51,6 +51,15 @@ module.exports = {
   ],
 
   plugins: [
-    '@/plugins/filters.js'
-  ]
+    { src: '@/plugins/filters.js' },
+    { src: '@/plugins/components', ssr: false }
+  ],
+
+  manifest: {
+    "name": 'RepsCount',
+    "background_color": "#b5e3ff",
+    "display": "standalone",
+    "theme_color": "#b5e3ff",
+    "start_url": "/"
+  }
 }

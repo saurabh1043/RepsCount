@@ -17,7 +17,8 @@
     "bulma": "^0.6.2",
     "moment": "^2.22.0",
     "numeral": "^2.0.6",
-    "nuxt": "^1.0.0"
+    "nuxt": "^1.0.0",
+    "vue-switches": "^2.0.1"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",

@@ -1,10 +1,11 @@
 <template>
-  <h1 class="title is-1">
-    {{ this.minutes | numeral('00') }} : {{ this.seconds | numeral('00') }}
-  </h1>
+    <h1 class="title is-1 has-text-centered">
+      {{ this.minutes | numeral('00') }} : {{ this.seconds | numeral('00') }}
+    </h1>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import moment from 'moment'
 
 export default {
@@ -16,10 +17,6 @@ export default {
     start: {
       type: Boolean,
       default: false
-    },
-    resetted: {
-      type: Boolean,
-      default: true
     }
   },
 
@@ -29,6 +26,12 @@ export default {
       seconds: null,
       timer: null
     }
+  },
+
+  computed: {
+    ...mapGetters([
+      'resetted'
+    ])
   },
 
   watch: {
@@ -58,6 +61,7 @@ export default {
       if (data) {
         this.minutes = this.time.minutes
         this.seconds = this.time.seconds
+        this.$store.commit('reset', false)
       }
     }
   },
@@ -68,3 +72,6 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+</style>
