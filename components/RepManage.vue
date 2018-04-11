@@ -3,20 +3,20 @@
     <thead>
       <tr>
         <th>state</th>
-        <th>minutes</th>
-        <th>seconds</th>
+        <th>min</th>
+        <th>sec</th>
       </tr>
     </thead>
     <tbody>
       <tr v-for="(state, i) in rep" :key="i">
         <td>
-          <input type="text" class="rep-input" :value="state.state" placeholder="state" />
+          <input type="text" class="rep-input" :value="state.state" @input="setRep($event, state, 'state', i)" placeholder="state" />
         </td>
         <td>
-          <input type="text" class="rep-input" :value="state.minutes" placeholder="minutes" />
+          <input type="number" class="rep-input" :value="state.minutes" @input="setRep($event, state, 'minutes', i)" placeholder="minutes" />
         </td>
         <td>
-          <input type="text" class="rep-input" :value="state.seconds" placeholder="seconds" />
+          <input type="number" class="rep-input" :value="state.seconds" @input="setRep($event, state, 'seconds', i)" placeholder="seconds" />
         </td>
       </tr>
       <tr>
@@ -36,6 +36,19 @@ export default {
     ...mapGetters([
       'rep'
     ])
+  },
+
+  methods: {
+    setRep (evt, data, field, index) {
+      let value = evt.target.value
+
+      if (field === 'minutes' || field === 'seconds') {
+        value = value < 0 ? 0 : Number(value)
+        value = field === 'seconds' && value >= 60 ? 59 : value
+      }
+
+      data[field] = value
+    }
   }
 }
 </script>

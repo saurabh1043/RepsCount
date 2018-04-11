@@ -17,12 +17,14 @@
         continuously count
       </div>
       <div class="column">
-        <v-switch
-          :value="continueCount"
-          @input="val => $store.commit('continueCount', val)"
-          theme="bulma"
-          color="blue"
-        ></v-switch>
+        <no-ssr>
+          <v-switch
+            :value="continueCount"
+            @input="val => $store.commit('continueCount', val)"
+            theme="bulma"
+            color="blue"
+          ></v-switch>
+        </no-ssr>
       </div>
     </div>
     <div class="columns">
