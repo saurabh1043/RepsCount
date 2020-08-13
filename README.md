@@ -3,6 +3,7 @@
 > Workout reps counter web application
 
 ## Build Setup
+> Install Node version ">=4 <=9".
 
 ``` bash
 # install dependencies
